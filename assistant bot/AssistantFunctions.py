@@ -1,6 +1,8 @@
 import datetime
 from Record import Record
-from Phone import Phone
+import pickle
+from AddressBook import AddressBook
+
 def input_error(func):
     def inner(*args, **kwargs):
         try:
@@ -72,7 +74,10 @@ def show_all_contacts(book):
     
     for name, record in book.items():
         phones = ", ".join(str(phone) for phone in record.phones)
-        birthday = record.birthday.strftime('%d.%m.%Y') if hasattr(record, 'birthday') else "N/A"
+        if record.birthday is not None:
+            birthday = record.birthday.strftime('%d.%m.%Y')
+        else:
+            birthday = "N/A"
         contact_info = f"Contact name: {name.ljust(max_name_length)}, phones: {phones}, birthday: {birthday}"
         contacts_list.append(contact_info)
     
@@ -84,9 +89,9 @@ def get_birthdays_per_week(book):
     today = datetime.datetime.today().date()
 
     for name, record in book.items():
-        birthday = record.birthday.strftime('%d.%m.%Y')
-        if not birthday:
+        if record.birthday is None:
             continue
+        birthday = record.birthday.strftime('%d.%m.%Y')
         birthday_date = datetime.datetime.strptime(birthday, '%d.%m.%Y').date()
         birthday_this_year = birthday_date.replace(year=today.year)
 
@@ -129,3 +134,18 @@ def name_birthday(args, book):
         return contact.birthday.strftime('%d.%m.%Y') if hasattr(contact, 'birthday') else "N/A"
     else:
         return f"Contact '{name}' not found."
+    
+def load_address_book(filename):
+    try:
+        with open(filename, 'rb') as f:
+            return pickle.load(f)
+    except FileNotFoundError:
+        print("File not found. Creating a new address book.")
+        return AddressBook()
+    except Exception as e:
+        print(f"An error occurred while loading the address book: {e}")
+        return AddressBook()
+    
+def save_address_book(book, filename):
+    with open(filename, 'wb') as f:
+        pickle.dump(book, f)

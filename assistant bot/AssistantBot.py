@@ -2,13 +2,16 @@ from AssistantFunctions import*
 from AddressBook import AddressBook
 
 def main():
-    book = AddressBook()
+    filename = "address_book.pkl"
+    book = load_address_book(filename)
     print('Welcome to the assistant bot!')
     while True:
         user_input = input('Enter a command: ')
         command, *args = parse_input(user_input)
 
         if command in ['close', 'exit']:
+            print('Saving address book...')
+            save_address_book(book, filename)
             print('Good bye!')
             break
         elif command == 'hello':
