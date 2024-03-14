@@ -2,6 +2,7 @@ import datetime
 from Record import Record
 import pickle
 from AddressBook import AddressBook
+from NoteManager import NoteManager
 
 def input_error(func):
     def inner(*args, **kwargs):
@@ -67,7 +68,7 @@ def show_phone(args, book):
     else:
         return f"Contact '{name}' not found."
 
-
+@input_error
 def show_all_contacts(book):
     contacts_list = []
     max_name_length = max(len(name) for name in book.keys())
@@ -149,3 +150,18 @@ def load_address_book(filename):
 def save_address_book(book, filename):
     with open(filename, 'wb') as f:
         pickle.dump(book, f)
+
+def load_note_book(filename):
+    try:
+       with open(filename, 'rb') as f:
+            return pickle.load(f)
+    except FileNotFoundError:
+        print("File not found. Creating a new note book.")
+        return NoteManager()
+    except Exception as e:
+        print(f"An error occurred while loading the note book: {e}")
+        return NoteManager()
+    
+def save_note_book(note, filename):
+    with open(filename, 'wb') as f:
+        pickle.dump(note, f)
