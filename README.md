@@ -7,7 +7,15 @@ None
 
 Перелік функцій застосунка
 -----------
-None
+Available note commands:
+  - add-note: Add a new note (title and text).
+  - change-note: Change the text of a note.
+  - delete-note: Delete a note by title.
+  - add-tag: Add a tag to a note.
+  - delete-tag: Remove a tag from a note.
+  - find-note: Search and display a note by tag or title.
+  - all-note: Display all notes.
+  - help-note: Display this help message.
 
 Правила розробки
 -----------
