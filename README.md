@@ -1,6 +1,8 @@
 Застосунок "Адресна книга"
 =======
-
+```
+$ /bin/python3 "/home/anton/Documents/python/final-prj/assistant bot/AssistantBot.py"
+```
 Вимоги
 ----------
 None
