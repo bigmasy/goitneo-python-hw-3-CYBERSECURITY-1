@@ -7,6 +7,9 @@ def main():
     book = load_address_book(filename_book)
     note = load_note_book(filename_note)
     print('Welcome to the assistant bot!')
+    print('Available contact commands')
+    print(note.help_note())
+    print(book.help_contact())
     while True:
         user_input = input('Enter a command: ')
         try:
