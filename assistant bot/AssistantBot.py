@@ -25,19 +25,18 @@ def main():
         elif command == 'hello':
             print('How can I help you?')
         elif command == 'add-contact':
-            print(add_contact(args, book))
+            print(book.add())
         elif command == 'change-contact':
-            print(change_contact(args, book))
-        elif command == 'phone':
-            print(show_phone(args, book))
+            print(book.change())
         elif command == 'all-contact':
-            print(show_all_contacts(book))
-        elif command == 'add-birthday':
-            print(add_birthday(args, book))
-        elif command == 'show-birthday':
-            print(name_birthday(args, book))
+            print(book.get_all())
         elif command == 'birthday':
-            print(get_birthdays_per_week(book))
+            print(book.get_birthday())
+        elif command == 'find-contact':
+            print(book.find())
+        elif command == 'delete-contact':
+            print(book.delete())
+
         elif command == 'add-note':
             print(note.create_note())
         elif command == 'change-note':
@@ -52,10 +51,11 @@ def main():
             print(note.find_notes())
         elif command == 'all-note':
             print(note.get_all_notes())
-        elif command == 'help-note':
+        elif command == 'help':
             print(note.help_note())
+            print(book.help_contact())
         else:
-            print('Invalid command.')
+            print('Invalid command. Type "help" for a list of available commands.')
 
 
 if __name__ == '__main__':

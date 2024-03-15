@@ -7,6 +7,14 @@ None
 
 Перелік функцій застосунка
 -----------
+Available contact commands:
+  - add-contact: Add a new contact.
+  - change-contact: Change a field for an existing contact.
+  - delete-contact: Delete a contact by name.
+  - find-contact: Find and display a contact by any field.
+  - all-contact: Display all contacts.
+  - birthdays: Display contacts who have birthdays within a specified number of days.
+  - help: Display this help message.
 Available note commands:
   - add-note: Add a new note (title and text).
   - change-note: Change the text of a note.

@@ -1,23 +1,23 @@
 import re
 
 
-class Email() :
+class Email:
+    def __init__(self, value):
+        email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        if not re.match(email_pattern, value):
+            raise ValueError("Invalid email format!")
+        self._value = value
 
-    def validate_email(self, email) :
-        if not email :
-            return False
-        pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-        if re.match(pattern, email):
-            return True
-        else :
-            return False
+    @property
+    def value(self):
+        return self._value
 
-    def edit_email(self, email) :
-        if self.validate_email(email) :
-            return email
-        else :
-            raise ValueError('Invalid email.')
+    @value.setter
+    def value(self, new_value):
+        email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        if not re.match(email_pattern, new_value):
+            raise ValueError("Invalid email format!")
+        self._value = new_value
 
-    def init(self, value) :
-        if not self.validate_email(value):
-            raise ValueError('Invalid email.')
+    def __str__(self):
+        return self._value
