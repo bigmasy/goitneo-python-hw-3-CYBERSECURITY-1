@@ -9,7 +9,11 @@ def main():
     print('Welcome to the assistant bot!')
     while True:
         user_input = input('Enter a command: ')
-        command, *args = parse_input(user_input)
+        try:
+            command, *args = parse_input(user_input)
+        except ValueError:
+            command = 'Invalid command'
+
 
         if command in ['close', 'exit']:
             print('Saving address book...')
