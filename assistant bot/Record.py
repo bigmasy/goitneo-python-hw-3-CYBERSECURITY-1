@@ -1,52 +1,34 @@
 from Name import Name
 from Phone import Phone
-import datetime
+from Email import Email
+from Address import Address
+from Birthday import Birthday
 
 class Record:
-    def __init__(self, name):
+    def __init__(self, name, phone, email=None, address=None, birthday=None):
         self.name = Name(name)
-        self.phones = []
-        self.birthday = None
+        self.phone = Phone(phone)
+        self.email = Email(email) if email else None
+        self.address = Address(address) if address else None
+        self.birthday = Birthday(birthday) if birthday else None
 
-    def add_phone(self,phone):
-        self.phones.append(Phone(phone))
+    def update_name(self, new_name):
+        self.name = Name(new_name)
 
-    def remove_phone(self, phone):
-        for p in self.phones:
-            if p.value == phone:
-                self.phones.remove(p)
-                break
+    def update_phone(self, new_phone):
+        self.phone = Phone(new_phone)
 
-    def edit_phone(self, old_phone, new_phone):
-        for p in self.phones:
-            if p.value == old_phone:
-                p.value = new_phone
-                break
+    def update_address(self, new_address):
+        self.address = Address(new_address)
 
-    def find_phone(self, phone):
-        for p in self.phones:
-            if p.value == phone:
-                return p
-        return None
-    
-    def add_birthday(self, birthday):
-        try:
-            self.birthday = datetime.datetime.strptime(birthday, '%d.%m.%Y').date()
-        except ValueError:
-            raise ValueError('Birthday must be in the format DD.MM.YYYY')
-        
-    def select_phone(self):
-        if len(self.phones) == 1:
-            return self.phones[0].value
-        else:
-            print('Which number you want to change?')
-            count = 1
-            for idx, p in enumerate(self.phones):
-                print(f'{count}. {p.value}')
-                count += 1
-            selection = int(input('Enter the number of the phone you want to change: '))
-            return self.phones[selection - 1].value
+    def update_email(self, new_email):
+        self.email = Email(new_email)
 
-        
+    def update_birthday(self, new_birthday):
+        self.birthday = Birthday(new_birthday)
+
     def __str__(self):
-        return f'Contact name: {self.name.value}, phones: {"; ".join(p.value for p in self.phones)}'
+        return (
+            f"Name: {self.name}, Phone: {self.phone}, "
+            f"Address: {self.address}, Email: {self.email}, Birthday: {self.birthday}"
+        )

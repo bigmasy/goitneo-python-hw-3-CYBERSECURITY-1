@@ -1,30 +1,18 @@
-class Record:
-    def __init__(self, name):
-        self.name = Name(name)
-        self.phones = []
-        self.addresses = []  
-        self.birthday = None
+class Address:
+    def __init__(self, value):
+        if not value:
+            raise ValueError("Address is a required field and cannot be empty.")
+        self._value = value
 
-    def add_address(self, address):
-        self.addresses.append(Address(address))
+    @property
+    def value(self):
+        return self._value
 
-    def remove_address(self, address):
-        for a in self.addresses:
-            if a.value == address:
-                self.addresses.remove(a)
-                break
-
-    def edit_address(self, old_address, new_address):
-        for a in self.addresses:
-            if a.value == old_address:
-                a.value = new_address
-                break
-
-    def find_address(self, address):
-        for a in self.addresses:
-            if a.value == address:
-                return a
-        return None
+    @value.setter
+    def value(self, new_value):
+        if not new_value:
+            raise ValueError("Address cannot be empty.")
+        self._value = new_value
 
     def __str__(self):
-        return f'Contact name: {self.name.value}, phones: {"; ".join(p.value for p in self.phones)}, addresses: {"; ".join(a.value for a in self.addresses)}'
+        return self._value

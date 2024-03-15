@@ -1,7 +1,21 @@
 import re
 
 
-class Email() :
+class Email:
+    def __init__(self, value):
+        if not self.validate_email(value):
+            raise ValueError("Invalid email format!")
+        self._value = value
+
+    @property
+    def value(self):
+        return self._value
+
+    @value.setter
+    def value(self, new_value):
+        if not self.validate_email(new_value):
+            raise ValueError("Invalid email format!")
+        self._value = new_value
 
     def validate_email(self, email) :
         if not email :
@@ -12,12 +26,6 @@ class Email() :
         else :
             return False
 
-    def edit_email(self, email) :
-        if self.validate_email(email) :
-            return email
-        else :
-            raise ValueError('Invalid email.')
 
-    def init(self, value) :
-        if not self.validate_email(value):
-            raise ValueError('Invalid email.')
+    def __str__(self):
+        return self._value
