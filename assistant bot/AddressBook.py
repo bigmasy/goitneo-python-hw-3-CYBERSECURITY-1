@@ -27,7 +27,7 @@ class AddressBook(UserDict):
                     Email(email)
                     break
                 except ValueError as e:
-                    print(f"Invalid email format: {e}")
+                    print(f"{e}. Please try again.")
                     email = input('Enter email: ') 
 
         address = input('Enter address: ')
@@ -44,6 +44,7 @@ class AddressBook(UserDict):
         self.data.append(user)
         return f"User {name} added successfully!"
     
+    @input_error
     def change(self):
         name_to_change = input("Enter the name of the user you want to change: ")
 
@@ -58,15 +59,15 @@ class AddressBook(UserDict):
         new_value = input(f"Enter the new value for {field_to_change}: ")
 
         if field_to_change == 'name':
-            user_to_change.name.value = new_value
+            user_to_change.update_name(new_value)
         elif field_to_change == 'phone':
-            user_to_change.phone.value = new_value
+            user_to_change.update_phone(new_value)
         elif field_to_change == 'email':
-            user_to_change.email.value = new_value
+            user_to_change.update_email(new_value)
         elif field_to_change == 'address':
-            user_to_change.address.value = new_value
+            user_to_change.update_address(new_value)
         elif field_to_change == 'birthday':
-            user_to_change.birthday.value = new_value
+            user_to_change.update_birthday(new_value)
 
         return f"{field_to_change.capitalize()} for user {name_to_change} changed successfully!"
     
