@@ -1,5 +1,4 @@
-from AssistantFunctions import*
-from NoteManager import*
+from AssistantFunctions import parse_input, load_address_book, save_address_book, load_note_book, save_note_book
 
 def main():
     filename_book = "address_book.pkl"
@@ -7,6 +6,9 @@ def main():
     book = load_address_book(filename_book)
     note = load_note_book(filename_note)
     print('Welcome to the assistant bot!')
+    print('Available contact commands')
+    print(note.help_note())
+    print(book.help_contact())
     while True:
         user_input = input('Enter a command: ')
         try:
