@@ -1,5 +1,3 @@
-import datetime
-from Record import Record
 import pickle
 from AddressBook import AddressBook
 from NoteManager import NoteManager

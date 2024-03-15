@@ -1,5 +1,4 @@
-from AssistantFunctions import*
-from NoteManager import*
+from AssistantFunctions import parse_input, load_address_book, save_address_book, load_note_book, save_note_book
 
 def main():
     filename_book = "address_book.pkl"
