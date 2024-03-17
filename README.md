@@ -25,16 +25,12 @@ Installation
 ----------
 1. Clone the repository:
     ```shell
-    git clone https://github.com/aaleksieiev/goitneo-python-final-CYBERSECURITY-1.git assistant-bot
+    git clone https://github.com/aaleksieiev/goitneo-python-final-CYBERSECURITY-1.git
     ```
 2. Navigate to the project directory:
     ```shell
     cd assistant-bot
     ```
-3. Run
-   ```shell
-    $ /bin/python3 "./assistant-bot/AssistantBot.py"
-   ```
 3. Install the package.
     ```shell
     pip install -e .
@@ -43,10 +39,13 @@ Installation
 Usage
 ----------
 To start the Assistant Bot, run the following command:
-
     ```shell
     assistant_bot
     ```
+   
+```shell
+$ /bin/python3 "./assistant-bot/AssistantBot.py"
+```
 
 Правила розробки
 -----------
