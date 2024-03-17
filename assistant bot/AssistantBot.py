@@ -32,7 +32,7 @@ def main():
             print(book.change())
         elif command == 'all-contact':
             print(book.get_all())
-        elif command == 'birthday':
+        elif command == 'birthdays':
             print(book.get_birthday())
         elif command == 'find-contact':
             print(book.find())
