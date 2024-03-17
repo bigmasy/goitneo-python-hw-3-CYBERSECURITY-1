@@ -1,8 +1,6 @@
 Застосунок "Адресна книга"
 =======
-```
-$ /bin/python3 "./assistant-bot/AssistantBot.py"
-```
+
 Features
 -----------
 Available contact commands:
@@ -33,6 +31,10 @@ Installation
     ```shell
     cd assistant-bot
     ```
+3. Run
+   ```shell
+    $ /bin/python3 "./assistant-bot/AssistantBot.py"
+   ```
 3. Install the package.
     ```shell
     pip install -e .
