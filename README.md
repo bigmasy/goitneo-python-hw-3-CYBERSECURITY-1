@@ -33,32 +33,24 @@ Installation
     ```
 3. Install the package.
     ```shell
-    pip install -e .
+    pip install -e . —user
     ```
-5. ```shell
+
+Usage
+----------
+To start the Assistant Bot, run the following command:
+   ```shell
    $ assistant_bot
    ```
    or
    ```shell
    $ python3 AssistantBot.py
    ```
-
-Usage
-----------
-To start the Assistant Bot, run the following command:
-    ```
-     $ python3 AssistantBot.py
-    ```
     
 
 Правила розробки
 -----------
 Використання git
-
-# Увага! 
-Коли створюєте "Запит на зміни" обрайте назву репозиторію "aaleksieiev/goitneo-python-final-CYBERSECURITY-1"
-![alt text](image.png)
-
 
 1) Головна гілка репозиторія називається main. Для кожної задачі створюється нова гілка скопійована з головної. Для назви гілки використовуйте код вказаний в назві задачі.
 Приклад результату виконання команд в git: 
