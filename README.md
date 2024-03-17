@@ -7,7 +7,29 @@ $ /bin/python3 "./assistant bot/AssistantBot.py"
 ----------
 None
 
-Перелік функцій застосунка
+Installation
+----------
+1. Clone the repository:
+    ```shell
+    git clone https://github.com/aaleksieiev/goitneo-python-final-CYBERSECURITY-1.git
+    ```
+2. Navigate to the project directory:
+    ```shell
+    cd assistant-bot
+    ```
+3. Install the package.
+    ```shell
+    pip install -e .
+    ```
+
+Usage
+----------
+To start the Assistant Bot, run the following command:
+
+    ```shell
+    assistant_bot
+    ```
+Features
 -----------
 Available contact commands:
   - add-contact: Add a new contact.
@@ -16,7 +38,7 @@ Available contact commands:
   - find-contact: Find and display a contact by any field.
   - all-contact: Display all contacts.
   - birthdays: Display contacts who have birthdays within a specified number of days.
-  - help: Display this help message.
+  - help: Display help message.
 Available note commands:
   - add-note: Add a new note (title and text).
   - change-note: Change the text of a note.
@@ -25,7 +47,7 @@ Available note commands:
   - delete-tag: Remove a tag from a note.
   - find-note: Search and display a note by tag or title.
   - all-note: Display all notes.
-  - help-note: Display this help message.
+  - help: Display help message.
 
 Правила розробки
 -----------
