@@ -35,7 +35,10 @@ Installation
     ```shell
     pip install -e .
     ```
-4. Run
+5. ```shell
+   $ assistant_bot
+   ```
+   or
    ```shell
    $ python3 AssistantBot.py
    ```
