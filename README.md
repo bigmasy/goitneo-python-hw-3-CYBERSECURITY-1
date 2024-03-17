@@ -1,7 +1,7 @@
 Застосунок "Адресна книга"
 =======
 ```
-$ /bin/python3 "./assistant bot/AssistantBot.py"
+$ /bin/python3 "./assistant-bot/AssistantBot.py"
 ```
 Вимоги
 ----------
@@ -11,7 +11,7 @@ Installation
 ----------
 1. Clone the repository:
     ```shell
-    git clone https://github.com/aaleksieiev/goitneo-python-final-CYBERSECURITY-1.git
+    git clone https://github.com/aaleksieiev/goitneo-python-final-CYBERSECURITY-1.git assistant-bot
     ```
 2. Navigate to the project directory:
     ```shell
