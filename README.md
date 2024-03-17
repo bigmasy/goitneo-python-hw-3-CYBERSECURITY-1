@@ -42,11 +42,6 @@ To start the Assistant Bot, run the following command:
     ```shell
     assistant_bot
     ```
-or
-
-   ```shell
-  $ /bin/python3 "./assistant-bot/AssistantBot.py"
-  ```
 
 Правила розробки
 -----------
