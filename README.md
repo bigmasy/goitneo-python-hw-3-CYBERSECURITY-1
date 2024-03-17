@@ -3,9 +3,6 @@
 ```
 $ /bin/python3 "./assistant-bot/AssistantBot.py"
 ```
-Вимоги
-----------
-None
 
 Installation
 ----------
